@@ -578,8 +578,6 @@ void listenClients(std::vector<int> clientFd, std::vector<pid_t> clientPid, int 
 }
 
 template<class T> void launch(int runLength, bool useDoubles, bool useTensorCores, ssize_t useBytes) {
-	system("nvidia-smi -L");
-
 	// Initting A and B with random data
 	T *A = (T*) malloc(sizeof(T)*SIZE*SIZE);
 	T *B = (T*) malloc(sizeof(T)*SIZE*SIZE);
