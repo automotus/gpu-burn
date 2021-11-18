@@ -383,8 +383,6 @@ int pollTemp(pid_t *p) {
 	if (!myPid) {
 		close(tempPipe[0]);
 		dup2(tempPipe[1], STDOUT_FILENO); // Stdout
-		execlp("nvidia-smi", "nvidia-smi", "-l", "5", "-q", "-d", "TEMPERATURE", NULL);
-		fprintf(stderr, "Could not invoke nvidia-smi, no temps available\n");
 		
 		exit(0);
 	}
